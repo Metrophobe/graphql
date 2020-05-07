@@ -15,7 +15,10 @@ Ensure you have a copy of node and npm installed.
 ## Usage
 
 - run 'npm start' to run the server
-- go to the browser and locate http://localhost:5000/gql
+- go to http://localhost:5000 to use the test client
+- go to the browser and locate http://localhost:5000/gql to try the graphql querying syntax in an ide (graphiql)
+
+
 
 ## Contributing
 
