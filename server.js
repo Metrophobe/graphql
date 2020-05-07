@@ -251,8 +251,17 @@ const express = require("express");
 //Then we get the express graphql middleware
 const expressGraphQL = require("express-graphql");
 
+//Just in case you are interested in cors ....
+//const cors = require("cors");
+
+//path
+const path = require("path");
+
 //Then we create a server
 const app = express();
+
+//Test Client
+app.use(express.static(path.join(__dirname, "client")));
 
 //Use the expressGraphQL Middleware aka GraphiQL
 app.use(
@@ -262,6 +271,15 @@ app.use(
     graphiql: true,
   })
 );
+
+//Utilising CORS
+//app.use(cors());//basic allow origin *
+
+//Route
+app.get("/", function (req, res) {
+  // save html files in the `views` folder...
+  res.sendfile("index.html");
+});
 
 //Start off the server .... with npm start
 app.listen(5000, () => console.log("server running at port 5000"));
